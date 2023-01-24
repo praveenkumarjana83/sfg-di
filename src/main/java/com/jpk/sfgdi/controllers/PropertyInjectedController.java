@@ -1,2 +1,19 @@
-package com.jpk.sfgdi.controllers;public class PropertyInjectedController {
+package com.jpk.sfgdi.controllers;
+
+import com.jpk.sfgdi.services.GreetingService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Controller;
+
+@Controller
+public class PropertyInjectedController {
+
+    @Qualifier("propertyInjectedGreetingService")
+    @Autowired
+    public GreetingService greetingService;
+
+    public String getGreeting() {
+        return greetingService.sayGreeting();
+    }
+
 }

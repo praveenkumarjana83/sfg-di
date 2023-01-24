@@ -2,7 +2,9 @@ package com.jpk.sfgdi.services;
 
 import org.springframework.stereotype.Service;
 
-@Service
+//commented so we can configure these beans through Java Configuration in config class which is
+//annotated with @Configuration
+//@Service
 public class ConstructorInjectedGreetingService implements GreetingService {
 
     @Override
