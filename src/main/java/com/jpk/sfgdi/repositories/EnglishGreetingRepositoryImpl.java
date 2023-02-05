@@ -1,2 +1,9 @@
-package com.jpk.sfgdi.repositories;public class EnglishGreetingRepositoryImpl {
+package com.jpk.sfgdi.repositories;
+
+public class EnglishGreetingRepositoryImpl implements EnglishGreetingRepository {
+
+    @Override
+    public String getGreeting() {
+        return "Hello World - EN Greeting Repository";
+    }
 }

@@ -1,6 +1,9 @@
 package com.jpk.sfgdi;
 
 import com.jpk.sfgdi.controllers.*;
+import com.jpk.sfgdi.datasource.FakeDataSource;
+import com.jpk.sfgdi.services.PrototypeBean;
+import com.jpk.sfgdi.services.SingletonBean;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
@@ -36,6 +39,25 @@ public class SfgDiApplication {
 		String greeting = i18nController.sayGreeting();
 		logger.log(Level.INFO, greeting);
 
+		logger.log(Level.INFO, "------- Pet Service ---------");
+		PetController petController = (PetController) cntxt.getBean("petController");
+		String bestPetType = petController.getPetType();
+		logger.log(Level.INFO, bestPetType);
+
+		SingletonBean sb = (SingletonBean) cntxt.getBean("singletonBean");
+		System.out.println(sb.getMyScope());
+		SingletonBean sb1 = cntxt.getBean(SingletonBean.class);
+		System.out.println(sb1.getMyScope());
+
+		PrototypeBean pb = (PrototypeBean) cntxt.getBean("prototypeBean");
+		System.out.println(pb.getMyScope());
+		PrototypeBean pb1 = cntxt.getBean(PrototypeBean.class);
+		System.out.println(pb1.getMyScope());
+
+		FakeDataSource fakeDataSource = cntxt.getBean(FakeDataSource.class);
+		System.out.println("Username: " + fakeDataSource.getUsername());
+		System.out.println("Password: " + fakeDataSource.getPassword());
+		System.out.println("JDBC URL: " + fakeDataSource.getJdbcURL());
 	}
 
 }
