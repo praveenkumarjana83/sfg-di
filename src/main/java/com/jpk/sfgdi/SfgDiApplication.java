@@ -1,6 +1,7 @@
 package com.jpk.sfgdi;
 
 import com.jpk.sfgdi.config.SFGConfiguration;
+import com.jpk.sfgdi.config.SFGConstructorConfig;
 import com.jpk.sfgdi.controllers.*;
 import com.jpk.sfgdi.datasource.FakeDataSource;
 import com.jpk.sfgdi.services.PrototypeBean;
@@ -65,6 +66,12 @@ public class SfgDiApplication {
 		logger.log(Level.INFO, () -> sfgConfiguration.getUsername());
 		logger.log(Level.INFO, () -> sfgConfiguration.getPassword());
 		logger.log(Level.INFO, () -> sfgConfiguration.getJdbcURL());
+
+		System.out.println("--------- Constructor Binding ------------");
+		SFGConstructorConfig sfgConstructorConfig = cntxt.getBean(SFGConstructorConfig.class);
+		logger.log(Level.INFO, () -> sfgConstructorConfig.getUsername());
+		logger.log(Level.INFO, () -> sfgConstructorConfig.getPassword());
+		logger.log(Level.INFO, () -> sfgConstructorConfig.getJdbcURL());
 	}
 
 }

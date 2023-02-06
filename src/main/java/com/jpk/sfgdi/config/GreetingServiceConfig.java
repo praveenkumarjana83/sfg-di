@@ -7,8 +7,10 @@ import com.jpk.sfgdi.repositories.EnglishGreetingRepository;
 import com.jpk.sfgdi.repositories.EnglishGreetingRepositoryImpl;
 import com.jpk.sfgdi.services.*;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.*;
 
+@EnableConfigurationProperties(SFGConstructorConfig.class)
 //@PropertySource("classpath:datasource.properties")
 @ImportResource("classpath:sfgdi-config.xml")
 @Configuration
