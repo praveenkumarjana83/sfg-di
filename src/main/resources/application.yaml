@@ -1,7 +1,20 @@
 spring:
   profiles:
-    active: EN, dog
+    #active: EN, dog, qa
+    active:
+      - EN
+      - dog
+      - prod
 jpk:
   username: yaml-username
   password: yaml-password
   jdbcurl: yaml-jdbcUrlConfig
+
+---
+
+spring:
+  profiles: prod
+jpk:
+  username: yaml-prod-username
+  password: yaml-prod-password
+  jdbcurl: yaml-prod-jdbcUrlConfig

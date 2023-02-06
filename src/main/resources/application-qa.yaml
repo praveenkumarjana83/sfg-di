@@ -1,0 +1,4 @@
+jpk:
+  username: yaml-qa-user
+  password: yaml-qa-password
+  jdbcurl: yaml-qa-jdbcUrlConfig

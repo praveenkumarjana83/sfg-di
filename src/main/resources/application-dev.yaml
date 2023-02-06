@@ -1,0 +1,4 @@
+jpk:
+  username: yaml-dev-user
+  password: yaml-dev-password
+  jdbcurl: yaml-dev-jdbcUrlConfig
