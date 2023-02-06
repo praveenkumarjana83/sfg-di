@@ -45,19 +45,19 @@ public class SfgDiApplication {
 		logger.log(Level.INFO, bestPetType);
 
 		SingletonBean sb = (SingletonBean) cntxt.getBean("singletonBean");
-		System.out.println(sb.getMyScope());
+		logger.log(Level.INFO, sb.getMyScope());
 		SingletonBean sb1 = cntxt.getBean(SingletonBean.class);
-		System.out.println(sb1.getMyScope());
+		logger.log(Level.INFO, sb1.getMyScope());
 
 		PrototypeBean pb = (PrototypeBean) cntxt.getBean("prototypeBean");
-		System.out.println(pb.getMyScope());
+		logger.log(Level.INFO, pb.getMyScope());
 		PrototypeBean pb1 = cntxt.getBean(PrototypeBean.class);
-		System.out.println(pb1.getMyScope());
+		logger.log(Level.INFO, pb1.getMyScope());
 
 		FakeDataSource fakeDataSource = cntxt.getBean(FakeDataSource.class);
-		System.out.println("Username: " + fakeDataSource.getUsername());
-		System.out.println("Password: " + fakeDataSource.getPassword());
-		System.out.println("JDBC URL: " + fakeDataSource.getJdbcURL());
+		logger.log(Level.INFO, () -> "Username: " + fakeDataSource.getUsername());
+		logger.log(Level.INFO, () -> "Password: " + fakeDataSource.getPassword());
+		logger.log(Level.INFO, () -> "JDBC URL: " + fakeDataSource.getJdbcURL());
 	}
 
 }
