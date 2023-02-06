@@ -1,5 +1,6 @@
 package com.jpk.sfgdi;
 
+import com.jpk.sfgdi.config.SFGConfiguration;
 import com.jpk.sfgdi.controllers.*;
 import com.jpk.sfgdi.datasource.FakeDataSource;
 import com.jpk.sfgdi.services.PrototypeBean;
@@ -58,6 +59,12 @@ public class SfgDiApplication {
 		logger.log(Level.INFO, () -> "Username: " + fakeDataSource.getUsername());
 		logger.log(Level.INFO, () -> "Password: " + fakeDataSource.getPassword());
 		logger.log(Level.INFO, () -> "JDBC URL: " + fakeDataSource.getJdbcURL());
+
+		System.out.println("-------- Config Props Bean -------");
+		SFGConfiguration sfgConfiguration = cntxt.getBean(SFGConfiguration.class);
+		logger.log(Level.INFO, () -> sfgConfiguration.getUsername());
+		logger.log(Level.INFO, () -> sfgConfiguration.getPassword());
+		logger.log(Level.INFO, () -> sfgConfiguration.getJdbcURL());
 	}
 
 }
