@@ -1,0 +1,7 @@
+spring:
+  profiles:
+    active: EN, dog
+jpk:
+  username: yaml-username
+  password: yaml-password
+  jdbcurl: yaml-jdbcUrlConfig
